@@ -1,10 +1,5 @@
-
-# RXVT Config. terminus font is required!
-
-#Rxvt*font:xft: true
-#Rxvt*font: terminus-iso8859-1-14
-#Rxvt*font: xft:Monaco:pixelsize=13
-Rxvt*font: xft:Noto Sans Mono:pixelsize=13
+URxvt*font:xft: true
+URxvt*font: xft:Fira Mono:size=13
 
 URxvt*transparent: false
 URxvt*tintColor: White
