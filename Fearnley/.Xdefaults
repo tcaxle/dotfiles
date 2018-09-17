@@ -1,0 +1,45 @@
+
+# RXVT Config. terminus font is required!
+
+#Rxvt*font:xft: true
+#Rxvt*font: terminus-iso8859-1-14
+#Rxvt*font: xft:Monaco:pixelsize=13
+Rxvt*font: xft:Noto Sans Mono:pixelsize=13
+
+URxvt*transparent: false
+URxvt*tintColor: White
+URxvt*shading: 25
+URxvt*scrollBar: false
+
+URxvt.borderColor: #0f0f0f
+URxvt.internalBorder: 0
+URxvt.externalBorder: 1
+
+urxvt*foreground: #ffffff
+
+*background:  #000000
+*foreground:  #ffffff
+! Black
+*color0:      #202020
+*color8:      #606060
+! Red
+*color1:      #ff6565
+*color9:      #ff8d8d
+! Green
+*color2:      #93d44f
+*color10:     #c8e7a8
+! Yellow
+*color3:      #eab93d
+*color11:     #ffc123
+! Blue
+*color4:      #204a87
+*color12:     #3465a4
+! Mangenta
+*color5:      #ce5c00
+*color13:     #f57900
+! Cyan 
+*color6:      #89b6e2
+*color14:     #46a4ff
+! White
+*color7:      #cccccc
+*color15: #ffffff
