@@ -1,0 +1,52 @@
+# GENERAl
+set editor       = "vim"
+set sort         = threads
+set sort_browser = reverse-date
+set sort_aux     = reverse-last-date-received
+
+# SEND
+set from         = "T. C. A. Crossley <tcac2@cam.ac.uk>"
+set realname     = "T. C. A. Crossley"
+set smtp_url     = "smtp://tcac2@smtp.hermes.cam.ac.uk:587/"
+set smtp_pass    = "*****"
+set ssl_starttls = yes
+
+# RECIEVE
+set imap_user        = "tcac2"
+set imap_pass        = "*****"
+set folder           = "imaps://imap.hermes.cam.ac.uk:143/"
+set spoolfile        = "imaps://imap.hermes.cam.ac.uk/INBOX"
+set postponed        = "imaps://imap.hemes.cam.ac.uk/Drafts"
+set record           = "imaps://imap.hermes.cam.ac.uk/Sent"
+set header_cache     = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+
+set move = no
+
+# COLOURS
+color hdrdefault white default
+color quoted magenta default
+color signature red default
+
+color indicator  blue yellow
+color error brightred default
+color status black cyan
+color tree green default    # the thread tree in the index menu
+
+color tilde magenta default
+color message brightcyan default
+color markers brightcyan default
+color attachment brightmagenta default
+color search default green  # how to hilite search patterns in the pager
+
+color header brightred default ^(From|To|Date):
+color header brightgreen default ^(Subject):
+color body magenta default "(ftp|http)://[^ ]+" # point out URLs
+color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+    # e-mail addresses
+color underline brightgreen default
+
+# MACROS
+macro index A \
+    "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
+    "mark all new as read"
