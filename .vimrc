@@ -1,6 +1,7 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'lervag/vimlatex'
 Plug 'raimondi/delimitmate'
 Plug 'easymotion/vim-easymotion'
 Plug 'roosta/srcery'
