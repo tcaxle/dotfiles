@@ -3,6 +3,8 @@ set editor       = "vim"
 set sort         = threads
 set sort_browser = reverse-date
 set sort_aux     = reverse-last-date-received
+bind index G imap-fetch-mail
+
 
 # SEND
 set from         = "T. C. A. Crossley <tcac2@cam.ac.uk>"
