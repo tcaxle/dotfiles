@@ -28,6 +28,7 @@ set fdm=syntax
 colorscheme srcery
 set hlsearch
 set tabstop=4
+set shiftwidth=4
 filetype indent on
 set cursorline
 set showcmd
