@@ -8,7 +8,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'roosta/srcery'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-syntastic/syntastic'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -18,7 +17,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
-Plug 'ntpeters/vim-better-whitespace'
+Plug 'christoomey/vim-system-copy'
 call plug#end()
 
 " Defaults
@@ -35,15 +34,7 @@ set showcmd
 set wildmenu
 syntax enable
 set ignorecase
-let g:better_whitespace_ctermcolor='red'
-let g:better_whitespace_enabled=1
-let g:strip_whitespace_on_save=1
-
-" Indent Highlights
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=0
+set pastetoggle=<F3>
 
 " CTRL-P
 let g:ctrlp_map = '<c-p>'
