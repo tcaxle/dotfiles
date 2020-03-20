@@ -1,0 +1,7 @@
+[Default Applications]
+application/pdf=FoxitReader.desktop
+application/ppdf=FoxitReader.desktop
+
+[Added Associations]
+image/tiff=gimp.desktop;
+application/pdf=foxitreader.desktop;

@@ -1,0 +1,17 @@
+game:
+  arch: win64
+  exe: drive_c/Program Files (x86)/Origin/Origin.exe
+  prefix: /home/xle/Games/the-sims-4
+system:
+  env:
+    DXVK_CONFIG_FILE: /home/xle/Games/the-sims-4/dxvk.conf
+    DXVK_HUD: '0'
+    __GL_SHADER_DISK_CACHE: '1'
+    __GL_SHADER_DISK_CACHE_PATH: /home/xle/Games/the-sims-4/nv-shaders
+  exclude_processes: QtWebEngineProcess.exe ActivationUI.exe OriginWebHelperService.exe
+wine:
+  dxvk: true
+  esync: true
+  overrides:
+    nvapi,nvapi64: disabled
+  version: lutris-5.0-x86_64
