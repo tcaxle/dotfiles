@@ -1,23 +1,29 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'dag/vim-fish'
-Plug 'lervag/vimtex'
-Plug 'raimondi/delimitmate'
-Plug 'easymotion/vim-easymotion'
-Plug 'roosta/srcery'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-syntastic/syntastic'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-sensible'
-Plug 'lokaltog/vim-powerline'
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-surround'
-Plug 'airblade/vim-gitgutter'
-Plug 'godlygeek/tabular'
-Plug 'christoomey/vim-system-copy'
+	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+	Plug 'valloric/youcompleteme'
+	Plug 'rdnetto/ycm-generator'
+	Plug 'cometsong/commentframe.vim'
+	Plug 'mhinz/vim-startify'
+	Plug 'dag/vim-fish'
+	Plug 'lervag/vimtex'
+	" Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+	Plug 'raimondi/delimitmate'
+	Plug 'easymotion/vim-easymotion'
+	Plug 'roosta/srcery'
+	Plug 'scrooloose/nerdcommenter'
+	Plug 'vim-syntastic/syntastic'
+	Plug 'tpope/vim-fugitive'
+	Plug 'yggdroot/indentline'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'tpope/vim-sensible'
+	Plug 'lokaltog/vim-powerline'
+	Plug 'kien/ctrlp.vim'
+	Plug 'tpope/vim-surround'
+	Plug 'airblade/vim-gitgutter'
+	Plug 'godlygeek/tabular'
+	Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 " Defaults
@@ -30,6 +36,8 @@ set fdm=syntax
 " colorscheme srcery
 colorscheme default
 let g:airline_theme='base16'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 set hlsearch
 set tabstop=4
 set shiftwidth=4
@@ -39,7 +47,15 @@ set showcmd
 set wildmenu
 syntax enable
 set ignorecase
-set pastetoggle=<F3>
+let g:better_whitespace_ctermcolor='red'
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+set linebreak
+
+" Indent Highlights
+let g:indentLine_char = '│'
+set list
+set lcs=tab:\┆\ ,trail:⎵
 
 " CTRL-P
 let g:ctrlp_map = '<c-p>'
@@ -107,3 +123,21 @@ if exists("+showtabline")
   set stal=2
   set tabline=%!MyTabLine()
 endif
+
+" Auto Highlight
+" autosave delay, cursorhold trigger, default: 4000ms
+setl updatetime=100
+" highlight the word under cursor (CursorMoved is inperformant)
+highlight WordUnderCursor cterm=underline gui=underline
+autocmd CursorHold * call HighlightCursorWord()
+function! HighlightCursorWord()
+	" if hlsearch is active, don't overwrite it!
+	let search = getreg('/')
+	let cword = expand('<cword>')
+	if match(cword, search) == -1
+		exe printf('match WordUnderCursor /\V\<%s\>/', escape(cword, '/\'))
+	endif
+endfunction
+
+" Latex
+" let g:vimtex_compiler_method = 'latexmk'
