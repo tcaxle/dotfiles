@@ -1,0 +1,5 @@
+2020/04/09-01:01:57.052 28649a Reusing MANIFEST /home/xle/.config/google-chrome/Default/IndexedDB/https_shrek.fandom.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/04/09-01:02:42.486 29c6de Level-0 table #5: started
+2020/04/09-01:02:42.491 29c6de Level-0 table #5: 544808 bytes OK
+2020/04/09-01:02:42.495 29c6de Delete type=0 #3
+2020/04/09-01:02:42.496 29c6de Manual compaction at level-0 from (begin) .. (end); will stop at (end)

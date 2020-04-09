@@ -1,0 +1,118 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 1
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address.
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+net_avg_samples 2
+
+pad_percents 2
+
+#template0 ${color0}\1: ${exec ~/.i3/conky/info.py \2}
+#template1 ${color0}\1 \2: ${exec ~/.i3/conky/info.py \3}
+
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+# JSON for i3bar
+
+
+[
+
+#Battery Alert
+${if_match ${battery_percent BAT0} <= 20 }
+	${if_empty ${exec cat /sys/class/power_supply/BAT0/status | grep 'Discharging'}}
+	${else}
+		{"full_text": "LOW BATTERY", "urgent": true, "color": "\#da8252"},
+	${endif}
+${endif}
+
+#Free disk space
+{ "full_text" : "ROOT ${fs_free /}" , "color" : "\#b2aa87" },
+{ "full_text" : "HOME ${fs_free /home}" , "color" : "\#b2aa87" },
+
+#CPU
+{ "full_text" : "CPU ${cpu}% ${hwmon 0 temp 1}°C" , "color" : "\#b2aa87" },
+
+#GPU
+{ "full_text" : "GPU ${exec nvidia-smi -a | grep Gpu | awk '{print $3}'}% ${exec nvidia-smi -a | grep 'GPU Current Temp' | awk '{print $5}'}°C" , "color" : "\#b2aa87" },
+
+#Ram
+{ "full_text" : "RAM ${memperc}%" , "color" :
+${if_match ${memperc}<90}"\#b2aa87"${else}"\#da8252"${endif} },
+
+# Playerctl
+{ "full_text" :
+${if_match "${exec playerctl status}" == "Playing"}
+	"▶"
+${else}
+	${if_match "${exec playerctl status}" == "Paused"}
+		"■"
+	${else}
+		""
+	${endif}
+${endif}
+, "color" : "\#b2aa87"},
+
+#Sound
+{ "full_text" : "♪ ${exec pamixer --get-volume } %" , "color" : "\#b2aa87" },
+
+#Brightness
+{ "full_text" : "☀ ${exec xbacklight -get } %" , "color" : "\#b2aa87" },
+
+#SSID
+{"full_text" : ${if_empty ${wireless_essid wlp2s0}}
+"disconnected", "color" : "\#da8252"},
+ ${else}
+"${wireless_essid wlp2s0} ${wireless_link_qual_perc wlp2s0}% ${addrs wlp2s0}", "color" : "\#9fab63"},
+${endif}
+
+#Netspeed
+${if_empty ${exec fping archlinux.org -c 1 -t 300 | grep '0% loss'}}
+{ "full_text" : "⇵" , "color" : "\#da8252" },
+${else}
+{ "full_text" : "${downspeed wlp2s0} ⇵ ${upspeed wlp2s0}" , "color" : "\#9fab63" },
+${endif}
+
+#Battery
+{ "full_text": "${if_empty ${exec acpi | grep 'Discharging'}}⬆${else}⬇${endif} ${battery_percent} % ${battery_time}", "color":
+${if_empty ${exec acpi | grep 'Discharging'}}
+"\#9fab63"
+${else}${if_match ${battery_percent}<20}
+"\#da8252"
+${else}${if_match ${battery_percent}<50}
+"\#d3a061"
+${else}
+"\#b2aa87"
+${endif}${endif}${endif}},
+
+#Date
+{"full_text" : "${time %Y/%m/%d} ${time %H:%M:%S}", "color" : "\#b2aa87"}
+],
