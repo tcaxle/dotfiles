@@ -97,3 +97,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [ "$TERM" = "linux" ]; then
+	echo -en '\e]P0262c35' #dblack
+	echo -en '\e]P18b5335' #dred
+	echo -en '\e]P2575e36' #dgreen
+	echo -en '\e]P387663e' #dyellow
+	echo -en '\e]P42e485c' #dblue
+	echo -en '\e]P5865a63' #dmagenta
+	echo -en '\e]P6277468' #dcyan
+	echo -en '\e]P7726d56' #dwhite
+	echo -en '\e]P8444f60' #black
+	echo -en '\e]P9da8252' #red
+	echo -en '\e]PA9fab63' #green
+	echo -en '\e]PBd3a061' #yellow
+	echo -en '\e]PC48718f' #blue
+	echo -en '\e]PDb87b87' #magenta
+	echo -en '\e]PE3cb5a3' #cyan
+	echo -en '\e]PFb2aa87' #white
+	clear
+fi
