@@ -1,9 +1,0 @@
-# settings
-
-(GimpGegl-gegl-slic-config "2020-01-28 14:43:16"
-    (time 1580222596)
-    (cluster-size 16)
-    (compactness 21)
-    (iterations 1))
-
-# end of settings

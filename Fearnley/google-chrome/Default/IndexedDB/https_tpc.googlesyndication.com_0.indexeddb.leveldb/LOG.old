@@ -1,5 +1,0 @@
-2020/04/09-01:01:58.939 2a5807 Reusing MANIFEST /home/xle/.config/google-chrome/Default/IndexedDB/https_tpc.googlesyndication.com_0.indexeddb.leveldb/MANIFEST-000001
-2020/04/09-01:02:08.464 29c6de Level-0 table #5: started
-2020/04/09-01:02:08.468 29c6de Level-0 table #5: 381 bytes OK
-2020/04/09-01:02:08.475 29c6de Delete type=0 #3
-2020/04/09-01:02:08.475 29c6de Manual compaction at level-0 from (begin) .. (end); will stop at (end)
