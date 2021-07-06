@@ -1,0 +1,27 @@
+[submodule "dracula/i3"]
+	path = dracula/i3
+	url = http://github.com/dracula/i3
+[submodule "dracula/konsole"]
+	path = dracula/konsole
+	url = http://github.com/dracula/konsole
+[submodule "dracula/firefox"]
+	path = dracula/firefox
+	url = http://github.com/dracula/firefox
+[submodule "dracula/thunderbird"]
+	path = dracula/thunderbird
+	url = http://github.com/dracula/thunderbird
+[submodule "dracula/gtk"]
+	path = dracula/gtk
+	url = http://github.com/dracula/gtk
+[submodule "dracula/qt5"]
+	path = dracula/qt5
+	url = http://github.com/dracula/qt5
+[submodule "dracula/tmux"]
+	path = dracula/tmux
+	url = http://github.com/dracula/tmux
+[submodule "dracula/zsh"]
+	path = dracula/zsh
+	url = http://github.com/dracula/zsh
+[submodule "dracula/rofi"]
+	path = dracula/rofi
+	url = http://github.com/dracula/rofi
